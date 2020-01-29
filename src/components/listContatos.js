@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Input, Button, Popconfirm, Form} from 'antd';
 
-import apiConfig  from './apiConfig'
+import apiConfig  from '../api/apiConfig'
 
 function ListContatos(props) {
 

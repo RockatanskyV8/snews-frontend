@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 
-import apiConfig from "./apiConfig";
+import apiConfig from "../api/apiConfig";
 
 function FormContatos(props) {
   const FormItem = Form.Item;
@@ -22,6 +22,7 @@ function FormContatos(props) {
 
   const handleSubmit = e => {
     e.preventDefault();
+    console.log(e)
 
     if (id !== ""){
       apiConfig.updateContato(id, name, email, phone, gender, birthday);
@@ -50,19 +51,19 @@ function FormContatos(props) {
       <h1>Cadastros</h1>
       <Form onSubmit={handleSubmit}>
       <FormItem label="Nome">
-      <Input placeholder="Nome" value={contato.name} onChange={onNameChange} autoComplete="off" />
+      <Input placeholder="Nome" value={name} onChange={onNameChange} autoComplete="off" />
       </FormItem>
       <FormItem label="Email">
-      <Input placeholder="Email" value={contato.email} onChange={onEmailChange} autoComplete="off" />
+      <Input placeholder="Email" value={email} onChange={onEmailChange} autoComplete="off" />
       </FormItem>
       <FormItem label="Phone">
-      <Input placeholder="Phone" value={contato.phone} onChange={onPhoneChange} autoComplete="off" />
+      <Input placeholder="Phone" value={phone} onChange={onPhoneChange} autoComplete="off" />
       </FormItem>
       <FormItem label="Gender">
-      <Input placeholder="Gender" value={contato.gender} onChange={onGenderChange} autoComplete="off" />
+      <Input placeholder="Gender" value={gender} onChange={onGenderChange} autoComplete="off" />
       </FormItem>
       <FormItem label="Birthday">
-      <Input placeholder="Birthday" value={contato.birthday} onChange={onBirthdayChange} autoComplete="off" />
+      <Input placeholder="Birthday" value={birthday} onChange={onBirthdayChange} autoComplete="off" />
       </FormItem>
       <br />
       <Button type="primary" htmlType="submit" > Salvar </Button>

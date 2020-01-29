@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import FormContatos from "./formContatos";
-import ListContatos from "./listContatos";
+import FormContatos from "./components/formContatos";
+import ListContatos from "./components/listContatos";
 
-import apiConfig  from './apiConfig'
+import apiConfig  from './api/apiConfig'
 
 function App() {
 
