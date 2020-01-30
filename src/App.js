@@ -34,6 +34,15 @@ function App() {
     }
   };
 
+  const cancelUpdate = () => {
+      setId("");
+      setName("");
+      setEmail("");
+      setPhone("");
+      setGender("");
+      setBirthday("");
+  }
+
   useEffect(() => {
     apiConfig.getContatos().then(function(data){
       setContatos(data)
@@ -75,39 +84,26 @@ function App() {
       <tbody>
         <tr>
           <td>
-          <div>
-            <h1>Cadastros</h1>
-            <Form onSubmit={handleSubmit}>
-            <FormItem label="Nome">
-            <Input placeholder="Nome" value={name} onChange={onNameChange} autoComplete="off" />
-            </FormItem>
-            <FormItem label="Email">
-            <Input placeholder="Email" value={email} onChange={onEmailChange} autoComplete="off" />
-            </FormItem>
-            <FormItem label="Phone">
-            <Input placeholder="Phone" value={phone} onChange={onPhoneChange} autoComplete="off" />
-            </FormItem>
-            <FormItem label="Gender">
-            <Input placeholder="Gender" value={gender} onChange={onGenderChange} autoComplete="off" />
-            </FormItem>
-            <FormItem label="Birthday">
-            <Input placeholder="Birthday" value={birthday} onChange={onBirthdayChange} autoComplete="off" />
-            </FormItem>
-            <br />
-            <Button type="primary" htmlType="submit" > Salvar </Button>
-            <Button type="primary" onClick={() =>{
-              setId("");
-              setName("");
-              setEmail("");
-              setPhone("");
-              setGender("");
-              setBirthday("");
-            }
-            } > Cancelar </Button>
-            </Form>
-          </div>
+            <FormContatos
+              handleSubmit={handleSubmit}
+              name={name}
+              onNameChange={onNameChange}
+              email={email}
+              onEmailChange={onEmailChange}
+              phone={phone}
+              onPhoneChange={onPhoneChange}
+              gender={gender}
+              onGenderChange={onGenderChange}
+              birthday={birthday}
+              onBirthdayChange={onBirthdayChange}
+              cancelUpdate={cancelUpdate}
+            />
           </td>
-          <td><ListContatos contatos={contatos} columnsContatos={columnsContatos}/></td>
+          <td><ListContatos
+                contatos={contatos}
+                columnsContatos={columnsContatos}
+                />
+          </td>
         </tr>
       </tbody>
     </table>
@@ -116,3 +112,24 @@ function App() {
 }
 
 export default App;
+
+
+/*
+
+<Form onSubmit={handleSubmit}>
+<FormItem label="Nome">
+<Input placeholder="Nome" value={name} onChange={onNameChange} autoComplete="off" />
+</FormItem>
+<FormItem label="Email">
+<Input placeholder="Email" value={email} onChange={onEmailChange} autoComplete="off" />
+</FormItem>
+<FormItem label="Phone">
+<Input placeholder="Phone" value={phone} onChange={onPhoneChange} autoComplete="off" />
+</FormItem>
+<FormItem label="Gender">
+<Input placeholder="Gender" value={gender} onChange={onGenderChange} autoComplete="off" />
+</FormItem>
+<FormItem label="Birthday">
+<Input placeholder="Birthday" value={birthday} onChange={onBirthdayChange} autoComplete="off" />
+</FormItem>
+*/
