@@ -6,4 +6,4 @@ para iniciar a aplicação:
 
 ### `npm start`
 
-Funciona no localhost: [http://localhost:3000](http://localhost:3000)
+Funciona no localhost porta 3000: [http://localhost:3000](http://localhost:3000)
