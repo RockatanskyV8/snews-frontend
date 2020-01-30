@@ -7,3 +7,5 @@ para iniciar a aplicação:
 ### `npm start`
 
 Funciona no localhost porta 3000: [http://localhost:3000](http://localhost:3000)
+
+Nesta aplicação não consegui fazer validação nos campos, o que faz com que todas as informações inseridas sejam strings em plain text
