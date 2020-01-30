@@ -5,6 +5,21 @@ import ListContatos from "./components/listContatos";
 import apiConfig  from './api/apiConfig'
 import 'antd/dist/antd.css';
 
+function formatDate(date) {
+  var monthNames = [
+    "Janeiro", "Fevereiro", "Março",
+    "Abril", "Maio", "Junho", "Julho",
+    "Agost", "Setembro", "Outubro",
+    "Novembro", "Dezembro"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  return day + ' de ' + monthNames[monthIndex] + ' de ' + year;
+}
+
 function App() {
 
   const [contatos, setContatos] = useState([]);
@@ -19,8 +34,8 @@ function App() {
   const onNameChange = e => { setName(e.target.value); };
   const onEmailChange = e => { setEmail(e.target.value); };
   const onPhoneChange = e => { setPhone(e.target.value); };
-  const onGenderChange = e => { setGender(e.target.value); };
-  const onBirthdayChange = e => { setBirthday(e.target.value); };
+  const onGenderChange = e => { setGender(e); };
+  const onBirthdayChange = e => { setBirthday(formatDate(e._d)); };
 
   const handleSubmit = e => {
     e.preventDefault();

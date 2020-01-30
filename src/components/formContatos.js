@@ -1,8 +1,13 @@
 import React from 'react';
-import { Form, Input, DatePicker, Button } from 'antd';
+import { Form, Input, DatePicker, Select, Button } from 'antd';
+
+const { Option } = Select;
 
 function FormContatos(props) {
   const FormItem = Form.Item;
+
+  const dateFormat = 'DD/MM/YYYY';
+
   return(
     <div>
       <Form onSubmit={props.handleSubmit}>
@@ -16,10 +21,14 @@ function FormContatos(props) {
         <Input placeholder="Phone" value={props.phone} onChange={props.onPhoneChange} autoComplete="off" />
         </FormItem>
         <FormItem label="Gender">
-        <Input placeholder="Gender" value={props.gender} onChange={props.onGenderChange} autoComplete="off" />
+        <Select  placeholder="Gender" value={props.gender} onChange={props.onGenderChange} >
+          <Option value="masculino">M</Option>
+          <Option value="feminino">F</Option>
+          <Option value="N/A">N/A</Option>
+        </Select>
         </FormItem>
         <FormItem label="Birthday">
-        <Input placeholder="Birthday" value={props.birthday} onChange={props.onBirthdayChange} autoComplete="off" />
+        <DatePicker placeholder="Birthday" format={dateFormat} onChange={props.onBirthdayChange} />
         </FormItem>
         <br />
         <Button type="primary" htmlType="submit" > Salvar </Button>
