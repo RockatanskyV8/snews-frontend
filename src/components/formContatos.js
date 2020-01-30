@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input, DatePicker, Button } from 'antd';
 
 function FormContatos(props) {
   const FormItem = Form.Item;

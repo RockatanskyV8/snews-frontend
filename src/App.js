@@ -103,10 +103,11 @@ function App() {
               cancelUpdate={cancelUpdate}
             />
           </td>
-          <td><ListContatos
-                contatos={contatos}
-                columnsContatos={columnsContatos}
-                />
+          <td>
+            <ListContatos
+              contatos={contatos}
+              columnsContatos={columnsContatos}
+            />
           </td>
         </tr>
       </tbody>
@@ -116,24 +117,3 @@ function App() {
 }
 
 export default App;
-
-
-/*
-
-<Form onSubmit={handleSubmit}>
-<FormItem label="Nome">
-<Input placeholder="Nome" value={name} onChange={onNameChange} autoComplete="off" />
-</FormItem>
-<FormItem label="Email">
-<Input placeholder="Email" value={email} onChange={onEmailChange} autoComplete="off" />
-</FormItem>
-<FormItem label="Phone">
-<Input placeholder="Phone" value={phone} onChange={onPhoneChange} autoComplete="off" />
-</FormItem>
-<FormItem label="Gender">
-<Input placeholder="Gender" value={gender} onChange={onGenderChange} autoComplete="off" />
-</FormItem>
-<FormItem label="Birthday">
-<Input placeholder="Birthday" value={birthday} onChange={onBirthdayChange} autoComplete="off" />
-</FormItem>
-*/
