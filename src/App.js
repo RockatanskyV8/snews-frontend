@@ -3,6 +3,7 @@ import FormContatos from "./components/formContatos";
 import ListContatos from "./components/listContatos";
 
 import apiConfig  from './api/apiConfig'
+import 'antd/dist/antd.css';
 
 function App() {
 
