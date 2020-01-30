@@ -2,14 +2,11 @@ import React, { useState, useEffect } from 'react';
 import FormContatos from "./components/formContatos";
 import ListContatos from "./components/listContatos";
 
-import { Form, Input, Button } from 'antd';
 import apiConfig  from './api/apiConfig'
 
 function App() {
 
   const [contatos, setContatos] = useState([]);
-
-  const FormItem = Form.Item;
 
   const [id, setId]             = useState("")
   const [name, setName]         = useState("")
@@ -81,6 +78,12 @@ function App() {
   return (
     <div>
     <table>
+      <thead>
+        <tr>
+          <th><h1>Formulário</h1></th>
+          <th><h1>Lista</h1></th>
+        </tr>
+      </thead>
       <tbody>
         <tr>
           <td>

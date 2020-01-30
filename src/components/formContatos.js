@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Form, Input, Button } from 'antd';
-
-import apiConfig from "../api/apiConfig";
 
 function FormContatos(props) {
   const FormItem = Form.Item;
   return(
     <div>
-      <h1>Cadastros</h1>
       <Form onSubmit={props.handleSubmit}>
         <FormItem label="Nome">
         <Input placeholder="Nome" value={props.name} onChange={props.onNameChange} autoComplete="off" />

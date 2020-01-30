@@ -1,13 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Table, Input, Button, Popconfirm, Form} from 'antd';
-
-import apiConfig  from '../api/apiConfig'
+import React from 'react';
+import { Table } from 'antd';
 
 function ListContatos(props) {
 
   return (
     <div className="App">
-      <h1>Contatos</h1>
       <br />
       <Table
         dataSource={props.contatos}
