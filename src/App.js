@@ -42,8 +42,10 @@ function App() {
 
     if (id !== ""){
       apiConfig.updateContato(id, name, email, phone, gender, birthday);
+      window.location.reload();
     } else {
       apiConfig.createContatos(name, email, phone, gender, birthday);
+      window.location.reload();
     }
   };
 
@@ -71,7 +73,12 @@ function App() {
     {title: 'BDay',   dataIndex: 'info.birthday', key: 'birthday',},
     {title: '', key: 'delete',
       render: (text) => (
-          <button onClick = { (e) => { apiConfig.deleteContatos(String(text.id)) } } >Delete</button>
+          <button onClick = {
+            (e) => {
+              apiConfig.deleteContatos(String(text.id));
+              window.location.reload();
+            }
+          } >Delete</button>
       ),
     },
     {title: '', key: 'update',
