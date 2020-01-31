@@ -8,4 +8,4 @@ para iniciar a aplicação:
 
 Funciona no localhost porta 3000: [http://localhost:3000](http://localhost:3000)
 
-Nesta aplicação não consegui fazer validação nos campos, o que faz com que todas as informações inseridas sejam strings em plain text
+Nesta aplicação não consegui fazer validação nos campos de email e número de telefone, o que faz com que todas as informações inseridas sejam strings em plain text sem nenhum tratamento
